@@ -9,6 +9,8 @@
   "author": "Martí Clavé",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "back": "file:",
+    "express": "^4.21.0",
+    "uuid": "^10.0.0"
   }
 }
