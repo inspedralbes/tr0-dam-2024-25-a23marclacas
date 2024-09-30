@@ -1,0 +1,62 @@
+.graella {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.item1 {
+    grid-row: 1;
+    grid-column: 2 / 4;
+    text-align: center;
+}
+
+.item2 {
+    grid-row: 2;
+    grid-column: 2 / 4;
+    text-align: center;
+}
+
+.item3 {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+.item4 {
+    grid-row: 4;
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+.item5 {
+    grid-row: 3;
+    grid-column: 3 / 5;
+    text-align: center;
+}
+
+.item6 {
+    grid-row: 4;
+    grid-column: 3 / 5;
+    text-align: center;
+}
+
+.item7 {
+    grid-row: 5;
+    grid-column: 2 / 4;
+    text-align: center;
+}
+
+.boto1 {
+    grid-row: 6;
+    grid-column: 2;
+    text-align: center;
+}
+
+.boto2 {
+    grid-row: 6;
+    grid-column: 3;
+    text-align: center;
+}
+
+.titol {
+    text-align: center;
+}

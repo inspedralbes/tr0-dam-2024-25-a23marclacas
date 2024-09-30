@@ -1,18 +1,23 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
-//app.use(cors());
-app.use(express.json());
 
 // Middleware per parsejar JSON
 app.use(bodyParser.json());
+//app.use(cors());
+app.use(express.json());
+app.use(cors());
+
 
 // Carregar preguntes des del fitxer JSON
-let preguntes = require('./../doc/Qüestionari.json').preguntes;
+let preguntes = require('./../doc/Questionari.json').preguntes;
 
+//let preguntes = { prova :  1}
 // CRUD - Read (GET): Llistar totes les preguntes
 app.get('/preguntes', (req, res) => {
   res.json(preguntes);
