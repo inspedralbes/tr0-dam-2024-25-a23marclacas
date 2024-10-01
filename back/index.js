@@ -38,7 +38,7 @@ app.post('/preguntes', (req, res) => {
   const novaPregunta = req.body;
   novaPregunta.id = preguntes.length + 1;
   preguntes.push(novaPregunta);
-  fs.writeFileSync('./../doc/Qüestionari.json', JSON.stringify({ preguntes }, null, 2));
+  fs.writeFileSync('./../doc/Questionari.json', JSON.stringify({ preguntes }, null, 2));
   res.status(201).json(novaPregunta);
 });
 
@@ -57,7 +57,7 @@ app.put('/preguntes/:id', (req, res) => {
     pregunta.resposta_correcta = req.body.resposta_correcta || pregunta.resposta_correcta;
     pregunta.imatge = req.body.imatge || pregunta.imatge;
   
-    fs.writeFileSync('./../doc/Qüestionari.json', JSON.stringify({ preguntes }, null, 2));
+    fs.writeFileSync('./../doc/Questionari.json', JSON.stringify({ preguntes }, null, 2));
     res.json(pregunta);
   });
 
@@ -69,7 +69,7 @@ app.delete('/preguntes/:id', (req, res) => {
     return res.status(404).send('Pregunta no trobada');
   }
   preguntes.splice(index, 1);
-  fs.writeFileSync('./../doc/Qüestionari.json', JSON.stringify({ preguntes }, null, 2));
+  fs.writeFileSync('./../doc/Questionari.json', JSON.stringify({ preguntes }, null, 2));
   res.status(204).send();
 });
 
