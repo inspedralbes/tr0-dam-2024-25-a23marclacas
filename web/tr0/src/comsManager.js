@@ -16,18 +16,22 @@ export async function postPregunta(novaPregunta) {
     console.log(dades);
 };
 
-export async function putPregunta(idPregunta) {
-    const response = await fetch('http://localhost:3000/preguntes/${idPregunta}', {
+export async function putPregunta(idPregunta, pregunta) {
+    const response = await fetch(`http://localhost:3000/preguntes/${idPregunta}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(),
+        body: JSON.stringify(pregunta),
     });
+    const dades = await response.json();
+    console.log(dades);
 };
 
 export async function deletePregunta(idPregunta) {
-    const response = await fetch('http://localhost:3000/preguntes/${idPregunta}', {
+    const response = await fetch(`http://localhost:3000/preguntes/${idPregunta}`, {
         method: 'DELETE'
     });
+    const dades = await response.status();
+    console.log(dades);
 };

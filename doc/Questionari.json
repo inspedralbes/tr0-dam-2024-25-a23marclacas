@@ -6,7 +6,7 @@
       "respostes": [
         {
           "id": 1,
-          "etiqueta": "50 km/h"
+          "etiqueta": "40 km/h"
         },
         {
           "id": 2,
@@ -21,7 +21,7 @@
           "etiqueta": "100 km/h"
         }
       ],
-      "resposta_correcta": 3,
+      "resposta_correcta": "3",
       "imatge": "./Imatges/Pregunta 1.jpg"
     },
     {
@@ -30,19 +30,19 @@
       "respostes": [
         {
           "id": 1,
-          "etiqueta": "Continuar sense canviar de velocitat"
+          "etiqueta": "bContinuar sense canviar de velocitat"
         },
         {
           "id": 2,
-          "etiqueta": "Aturar-se immediatament"
+          "etiqueta": "aAturar-se immediatament"
         },
         {
           "id": 3,
-          "etiqueta": "Accelerar per passar abans que es posi en vermell"
+          "etiqueta": "cAccelerar per passar abans que es posi en vermell"
         },
         {
           "id": 4,
-          "etiqueta": "Aturar-se si és segur fer-ho"
+          "etiqueta": "dAturar-se si és segur fer-ho"
         }
       ],
       "resposta_correcta": 4,
@@ -218,27 +218,27 @@
     },
     {
       "id": 10,
-      "pregunta": "Quin tipus de senyal és un triangle invertit amb una línia blanca horitzontal?",
+      "pregunta": "Prova",
       "respostes": [
         {
           "id": 1,
-          "etiqueta": "Senyal de prohibició"
+          "etiqueta": "aa"
         },
         {
           "id": 2,
-          "etiqueta": "Senyal de cedir el pas"
+          "etiqueta": "bb"
         },
         {
           "id": 3,
-          "etiqueta": "Senyal de perill"
+          "etiqueta": "cc"
         },
         {
           "id": 4,
-          "etiqueta": "Senyal d’obligació"
+          "etiqueta": "dd"
         }
       ],
-      "resposta_correcta": 2,
-      "imatge": "./Imatges/Pregunta 10.jpg"
+      "resposta_correcta": "2",
+      "imatge": "qulasevolcosa"
     }
   ]
 }

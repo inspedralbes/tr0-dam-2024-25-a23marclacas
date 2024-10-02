@@ -1,9 +1,11 @@
 <script setup>
 import { onBeforeMount, ref, reactive } from 'vue'
-import { getPreguntes, postPregunta } from './comsManager'
+import { getPreguntes, postPregunta, putPregunta, deletePregunta } from './comsManager'
 
 const llistaPreguntes = ref([]);
 const mostrarFormulari = ref(false);
+const mostrarEdicio = ref(false);
+const preguntaSeleccionada = reactive(null);
 var novaPregunta = reactive({
     id: '',
     pregunta: "",
@@ -37,8 +39,8 @@ console.log(preguntes);
     });
 });
 
-function afegirPregunta() {
-    postPregunta(novaPregunta);
+async function afegirPregunta() {
+    await postPregunta(novaPregunta);
     llistaPreguntes.value.push(novaPregunta);
     novaPregunta = reactive({
         id: '',
@@ -65,6 +67,35 @@ function afegirPregunta() {
     imatge: ''
     })
 };
+
+function mostrarFormulariEdicio(pregunta) {
+  preguntaSeleccionada.value = Object.assign({}, pregunta);
+  console.log(preguntaSeleccionada.value);
+  mostrarEdicio.value = true;
+};
+
+function cancelEdicio() {
+  preguntaSeleccionada.value = null;
+  mostrarEdicio.value = false;
+};
+
+async function guardarCanvis() {
+    await putPregunta(preguntaSeleccionada.value.id, preguntaSeleccionada.value);
+    const index = llistaPreguntes.value.findIndex(p => p.id === preguntaSeleccionada.value.id);
+    if (index !== -1) {
+        Object.assign(llistaPreguntes.value[index], preguntaSeleccionada.value);
+    };
+    mostrarEdicio.value = false;
+};
+
+async function esborrarPregunta(idP) {
+    await deletePregunta(idP);
+    const index = llistaPreguntes.value.findIndex(p => p.id === idP);
+    if (index !== -1) {
+        llistaPreguntes.splice(index, 1);
+    };
+};
+
 </script>
 
 <template>
@@ -86,27 +117,51 @@ function afegirPregunta() {
                 <div class="item"><p>c&#41; {{ pregunta.respostes[2].etiqueta }}</p></div>
                 <div class="item"><p>d&#41; {{ pregunta.respostes[3].etiqueta }}</p></div>
                 <div class="item"><p>Resposta correcta: {{ pregunta.resposta_correcta }}</p></div>
-                <div class="b"><button class="boto1" @click="updatePregunta(pregunta.id)">Update</button></div>
-                <div class="b"><button class="boto2" @click="deletePregunta(pregunta.id)">Delete</button></div>
+                <div class="b"><button class="boto1" @click="mostrarFormulariEdicio(pregunta)">Update</button></div>
+                <div class="b"><button class="boto2" @click="esborrarPregunta(pregunta.id)">Delete</button></div>
             </div>
             </div>
 
-            <!-- Formulari per afegir una nova pregunta, només visible quan `mostrarFormulari` és cert -->
+            <!-- Formulari per afegir una nova pregunta -->
             <div class="formulari" v-if="mostrarFormulari">
-            <h2>Afegir Nova Pregunta</h2>
-            <input v-model="novaPregunta.pregunta" placeholder="Nova pregunta" />
-            <input v-model="novaPregunta.respostes[0].etiqueta" placeholder="Resposta A" />
-            <input v-model="novaPregunta.respostes[1].etiqueta" placeholder="Resposta B" />
-            <input v-model="novaPregunta.respostes[2].etiqueta" placeholder="Resposta C" />
-            <input v-model="novaPregunta.respostes[3].etiqueta" placeholder="Resposta D" /><br>
-            <select v-model="novaPregunta.resposta_correcta">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select><br><br>
-            <input v-model="novaPregunta.imatge" placeholder="URL Imatge" />
-            <button @click="afegirPregunta" class="boto1">Afegir Pregunta</button>
+                <h2>Afegir Nova Pregunta</h2>
+                <input v-model="novaPregunta.pregunta" placeholder="Nova pregunta" />
+                <input v-model="novaPregunta.respostes[0].etiqueta" placeholder="Resposta A" />
+                <input v-model="novaPregunta.respostes[1].etiqueta" placeholder="Resposta B" />
+                <input v-model="novaPregunta.respostes[2].etiqueta" placeholder="Resposta C" />
+                <input v-model="novaPregunta.respostes[3].etiqueta" placeholder="Resposta D" /><br>
+                <select v-model="novaPregunta.resposta_correcta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br><br>
+                <input v-model="novaPregunta.imatge" placeholder="URL Imatge" />
+                <button @click="afegirPregunta" class="boto1">Afegir Pregunta</button>
+            </div>
+
+
+            <!-- Formulari per editar una pregunta existent -->
+            <div v-if="mostrarEdicio" class="modal">
+                <div class="modal-content">
+                    <h2>Editar Pregunta</h2>
+                    <label for="enunciat">Enunciat: </label><input id="enunciat" v-model="preguntaSeleccionada.pregunta" placeholder="Pregunta" /><br>
+                    <label for="resposta1">Resposta A: </label><input id="resposta1" v-model="preguntaSeleccionada.respostes[0].etiqueta" placeholder="Resposta A" /><br>
+                    <label for="resposta2">Resposta B: </label><input id="resposta2" v-model="preguntaSeleccionada.respostes[1].etiqueta" placeholder="Resposta B" /><br>
+                    <label for="resposta3">Resposta C: </label><input id="resposta3" v-model="preguntaSeleccionada.respostes[2].etiqueta" placeholder="Resposta C" /><br>
+                    <label for="resposta4">Resposta D: </label><input id="resposta4" v-model="preguntaSeleccionada.respostes[3].etiqueta" placeholder="Resposta D" /><br>
+                    <label for="solucio">Resposta Correcte: </label><select id="solucio" v-model="preguntaSeleccionada.resposta_correcta">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select><br>
+                    <label for="img">URL Imatge: </label><input id="img" v-model="preguntaSeleccionada.imatge" placeholder="URL Imatge" /><br>
+                    <div class="modal-actions">
+                    <button @click="guardarCanvis()" class="boto1">Guardar Canvis</button>
+                    <button @click="cancelEdicio()" class="boto2">Cancel·lar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
@@ -218,6 +273,36 @@ function afegirPregunta() {
   button:focus {
       outline: none;
   }
+
+  .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 700px;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#enunciat {
+    width: 500px;
+}
+
 </style>
 
 
