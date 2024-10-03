@@ -4,6 +4,7 @@ const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const PORT = 3000;
+const { spawn } = require('child_process');
 
 
 // Middleware per parsejar JSON
@@ -16,7 +17,6 @@ app.use(cors());
 // Carregar preguntes des del fitxer JSON
 let preguntes = require('./../doc/Questionari.json').preguntes;
 
-//let preguntes = { prova :  1}
 // CRUD - Read (GET): Llistar totes les preguntes
 app.get('/preguntes', (req, res) => {
   res.json(preguntes);
@@ -70,6 +70,16 @@ app.delete('/preguntes/:id', (req, res) => {
   preguntes.splice(index, 1);
   fs.writeFileSync('./../doc/Questionari.json', JSON.stringify({ preguntes }, null, 2));
   res.status(204).send();
+});
+
+//Python
+app.get('/python', (req, res) => {
+  const pythonProcess = spawn('python', ['./python/calculEstadistiques.py']);
+  var messageFromPython = '';
+  pythonProcess.stdout.on('data', (data) => {
+    messageFromPython = data.toString().trim();
+  });
+  res.send(messageFromPython);
 });
 
 // Preguntes per l'Android (sense resposta correcte)

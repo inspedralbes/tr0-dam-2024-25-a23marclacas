@@ -6,7 +6,7 @@
       "respostes": [
         {
           "id": 1,
-          "etiqueta": "40 km/h"
+          "etiqueta": "50 km/h"
         },
         {
           "id": 2,
@@ -215,30 +215,6 @@
       ],
       "resposta_correcta": 1,
       "imatge": "./Imatges/Pregunta 9.jpg"
-    },
-    {
-      "id": 10,
-      "pregunta": "Prova",
-      "respostes": [
-        {
-          "id": 1,
-          "etiqueta": "aa"
-        },
-        {
-          "id": 2,
-          "etiqueta": "bb"
-        },
-        {
-          "id": 3,
-          "etiqueta": "cc"
-        },
-        {
-          "id": 4,
-          "etiqueta": "dd"
-        }
-      ],
-      "resposta_correcta": "2",
-      "imatge": "qulasevolcosa"
     }
   ]
 }

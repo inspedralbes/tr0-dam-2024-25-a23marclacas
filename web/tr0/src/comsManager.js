@@ -14,6 +14,7 @@ export async function postPregunta(novaPregunta) {
     });
     const dades = await response.json();
     console.log(dades);
+    novaPregunta.id = dades.id;
 };
 
 export async function putPregunta(idPregunta, pregunta) {
@@ -32,6 +33,12 @@ export async function deletePregunta(idPregunta) {
     const response = await fetch(`http://localhost:3000/preguntes/${idPregunta}`, {
         method: 'DELETE'
     });
-    const dades = await response.status();
+    const dades = await response.status;
     console.log(dades);
+};
+
+export async function missatgePython() {
+    const response = await fetch('http://localhost:3000/python');
+    const dades = await response.text();
+    return dades;
 };

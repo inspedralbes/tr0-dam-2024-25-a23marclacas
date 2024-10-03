@@ -1,11 +1,35 @@
 <script setup>
 import { onBeforeMount, ref, reactive } from 'vue'
-import { getPreguntes, postPregunta, putPregunta, deletePregunta } from './comsManager'
+import { getPreguntes, postPregunta, putPregunta, deletePregunta, missatgePython } from './comsManager'
 
 const llistaPreguntes = ref([]);
 const mostrarFormulari = ref(false);
 const mostrarEdicio = ref(false);
-const preguntaSeleccionada = reactive(null);
+var missatge = '';
+var preguntaSeleccionada = reactive({
+    id: '',
+    pregunta: "",
+    respostes: [
+        {
+          id: 1,
+          etiqueta: ""
+        },
+        {
+          id: 2,
+          etiqueta: ""
+        },
+        {
+          id: 3,
+          etiqueta: ""
+        },
+        {
+          id: 4,
+          etiqueta: ""
+        }
+    ],
+    resposta_correcta: 0,
+    imatge: ""
+});
 var novaPregunta = reactive({
     id: '',
     pregunta: "",
@@ -69,21 +93,44 @@ async function afegirPregunta() {
 };
 
 function mostrarFormulariEdicio(pregunta) {
-  preguntaSeleccionada.value = Object.assign({}, pregunta);
-  console.log(preguntaSeleccionada.value);
+  preguntaSeleccionada = pregunta;
+  console.log(preguntaSeleccionada);
   mostrarEdicio.value = true;
 };
 
 function cancelEdicio() {
-  preguntaSeleccionada.value = null;
+  preguntaSeleccionada = reactive({
+    id: '',
+    pregunta: "",
+    respostes: [
+        {
+          id: 1,
+          etiqueta: ""
+        },
+        {
+          id: 2,
+          etiqueta: ""
+        },
+        {
+          id: 3,
+          etiqueta: ""
+        },
+        {
+          id: 4,
+          etiqueta: ""
+        }
+    ],
+    resposta_correcta: 0,
+    imatge: ""
+});
   mostrarEdicio.value = false;
 };
 
 async function guardarCanvis() {
-    await putPregunta(preguntaSeleccionada.value.id, preguntaSeleccionada.value);
-    const index = llistaPreguntes.value.findIndex(p => p.id === preguntaSeleccionada.value.id);
+    await putPregunta(preguntaSeleccionada.id, preguntaSeleccionada);
+    const index = llistaPreguntes.value.findIndex(p => p.id === preguntaSeleccionada.id);
     if (index !== -1) {
-        Object.assign(llistaPreguntes.value[index], preguntaSeleccionada.value);
+        Object.assign(llistaPreguntes.value[index], preguntaSeleccionada);
     };
     mostrarEdicio.value = false;
 };
@@ -92,8 +139,12 @@ async function esborrarPregunta(idP) {
     await deletePregunta(idP);
     const index = llistaPreguntes.value.findIndex(p => p.id === idP);
     if (index !== -1) {
-        llistaPreguntes.splice(index, 1);
+        llistaPreguntes.value.splice(index, 1);
     };
+};
+
+async function helloWorld() {
+    missatge = await missatgePython();
 };
 
 </script>
