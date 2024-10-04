@@ -5,7 +5,7 @@ import { getPreguntes, postPregunta, putPregunta, deletePregunta, missatgePython
 const llistaPreguntes = ref([]);
 const mostrarFormulari = ref(false);
 const mostrarEdicio = ref(false);
-var missatge = '';
+var missatge = ref('');
 var preguntaSeleccionada = reactive({
     id: '',
     pregunta: "",
@@ -147,30 +147,35 @@ async function helloWorld() {
     missatge = await missatgePython();
 };
 
+async function missatgeP() {
+  missatge = await missatgePython();
+  console.log(missatge);
+} 
+
 </script>
 
 <template>
     <body>
         <div class="container">
             <div class="preguntes">
-            <h1 class="titol">Administrador del Qüestionari</h1>
-            <div class="botoAfegir">
-                <button class="a" @click="mostrarFormulari = !mostrarFormulari">
-                {{ mostrarFormulari ? 'Cancel·lar' : 'Afegir Pregunta' }}
-                </button>
-            </div>
+              <h1 class="titol">Administrador del Qüestionari</h1>
+              <div class="botoAfegir">
+                  <button class="a" @click="mostrarFormulari = !mostrarFormulari">
+                  {{ mostrarFormulari ? 'Cancel·lar' : 'Afegir Pregunta' }}
+                  </button>
+              </div>
 
-            <div v-for="pregunta in llistaPreguntes" :key="pregunta.id" class="graella">
-                <div class="item"><h2>{{ pregunta.pregunta }}</h2></div>
-                <div class="item"><p>Aquí va la imatge</p></div>
-                <div class="item"><p>a&#41; {{ pregunta.respostes[0].etiqueta }}</p></div>
-                <div class="item"><p>b&#41; {{ pregunta.respostes[1].etiqueta }}</p></div>
-                <div class="item"><p>c&#41; {{ pregunta.respostes[2].etiqueta }}</p></div>
-                <div class="item"><p>d&#41; {{ pregunta.respostes[3].etiqueta }}</p></div>
-                <div class="item"><p>Resposta correcta: {{ pregunta.resposta_correcta }}</p></div>
-                <div class="b"><button class="boto1" @click="mostrarFormulariEdicio(pregunta)">Update</button></div>
-                <div class="b"><button class="boto2" @click="esborrarPregunta(pregunta.id)">Delete</button></div>
-            </div>
+              <div v-for="pregunta in llistaPreguntes" :key="pregunta.id" class="graella">
+                  <div class="item"><h2>{{ pregunta.pregunta }}</h2></div>
+                  <div class="item"><p><!--img :src="pregunta.imatge"-->Aquí va la imatge</p></div>
+                  <div class="item"><p>a&#41; {{ pregunta.respostes[0].etiqueta }}</p></div>
+                  <div class="item"><p>b&#41; {{ pregunta.respostes[1].etiqueta }}</p></div>
+                  <div class="item"><p>c&#41; {{ pregunta.respostes[2].etiqueta }}</p></div>
+                  <div class="item"><p>d&#41; {{ pregunta.respostes[3].etiqueta }}</p></div>
+                  <div class="item"><p>Resposta correcta: {{ pregunta.resposta_correcta }}</p></div>
+                  <div class="b"><button class="boto1" @click="mostrarFormulariEdicio(pregunta)">Update</button></div>
+                  <div class="b"><button class="boto2" @click="esborrarPregunta(pregunta.id)">Delete</button></div>
+              </div>
             </div>
 
             <!-- Formulari per afegir una nova pregunta -->
@@ -214,6 +219,10 @@ async function helloWorld() {
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+          <button class="boto1" @click="missatgeP()">Missatge Python</button>
+          <p>{{ missatge }}</p>
         </div>
     </body>
 </template>

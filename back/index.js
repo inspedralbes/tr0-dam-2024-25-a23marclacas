@@ -75,11 +75,12 @@ app.delete('/preguntes/:id', (req, res) => {
 //Python
 app.get('/python', (req, res) => {
   const pythonProcess = spawn('python', ['./python/calculEstadistiques.py']);
-  var messageFromPython = '';
   pythonProcess.stdout.on('data', (data) => {
-    messageFromPython = data.toString().trim();
+    res.send(data.toString());
   });
-  res.send(messageFromPython);
+  pythonProcess.stderr.on('data', (data) => {
+    console.error('Error en el proceso de Python:', data.toString().trim());
+  });
 });
 
 // Preguntes per l'Android (sense resposta correcte)

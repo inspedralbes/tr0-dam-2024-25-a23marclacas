@@ -30,19 +30,19 @@
       "respostes": [
         {
           "id": 1,
-          "etiqueta": "bContinuar sense canviar de velocitat"
+          "etiqueta": "Continuar sense canviar de velocitat"
         },
         {
           "id": 2,
-          "etiqueta": "aAturar-se immediatament"
+          "etiqueta": "Aturar-se immediatament"
         },
         {
           "id": 3,
-          "etiqueta": "cAccelerar per passar abans que es posi en vermell"
+          "etiqueta": "Accelerar per passar abans que es posi en vermell"
         },
         {
           "id": 4,
-          "etiqueta": "dAturar-se si és segur fer-ho"
+          "etiqueta": "Aturar-se si és segur fer-ho"
         }
       ],
       "resposta_correcta": 4,
