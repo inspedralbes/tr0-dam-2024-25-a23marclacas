@@ -167,7 +167,7 @@ async function missatgeP() {
 
               <div v-for="pregunta in llistaPreguntes" :key="pregunta.id" class="graella">
                   <div class="item"><h2>{{ pregunta.pregunta }}</h2></div>
-                  <div class="item"><p><!--img :src="pregunta.imatge"-->Aquí va la imatge</p></div>
+                  <div class="item"><p>img :src="pregunta.imatge"</p></div>
                   <div class="item"><p>a&#41; {{ pregunta.respostes[0].etiqueta }}</p></div>
                   <div class="item"><p>b&#41; {{ pregunta.respostes[1].etiqueta }}</p></div>
                   <div class="item"><p>c&#41; {{ pregunta.respostes[2].etiqueta }}</p></div>

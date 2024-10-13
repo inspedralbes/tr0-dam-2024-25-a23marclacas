@@ -3,13 +3,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
+const PORT = 25247;
 const { spawn } = require('child_process');
 
 
 // Middleware per parsejar JSON
 app.use(bodyParser.json());
-//app.use(cors());
 app.use(express.json());
 app.use(cors());
 
@@ -85,17 +84,43 @@ app.get('/python', (req, res) => {
 
 // Preguntes per l'Android (sense resposta correcte)
 app.get('/partida', (req, res) => {
-    const num = req.query.num;
-    let llistaPreguntes = [];
-    for (let i = 0; i < num; i++) {
-        var obj = preguntes[i];
-        llistaPreguntes.push(obj.pregunta);
-        llistaPreguntes.push(obj.respostes);
+  const num = req.query.num;
+  let llistaPreguntes = [];
+  
+  for (let i = 0; i < num; i++) {
+      var obj = preguntes[i]; 
+      llistaPreguntes.push({
+          id: obj.id,
+          pregunta: obj.pregunta,   
+          respostes: obj.respostes,
+          imatge: obj.imatge
+      });
+  }
+
+  res.json(llistaPreguntes);
+});
+
+// Comprovar Respostes
+app.post('/respostes', (req, res) => {
+  const userResponses = req.body; 
+
+  let results = {
+    correct: 0,
+    incorrect: 0
+  };
+
+  for (item in userResponses) {
+    const p = preguntes.find(p => p.id === userResponses[item].pregunta);
+    if (userResponses[item].resposta + 1 == p.resposta_correcta) {
+      results.correct++;
+    } else {
+      results.incorrect++;
     }
-    res.json(llistaPreguntes);
+  }
+  res.json(results);
 });
 
 // Iniciar el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor en funcionament a http://localhost:${PORT}`);
+  console.log(`Servidor en funcionament a http://a23marclacas.dam.inspedralbes.cat:${PORT}`);
 });

@@ -22,7 +22,7 @@
         }
       ],
       "resposta_correcta": "3",
-      "imatge": "./Imatges/Pregunta 1.jpg"
+      "imatge": "https://www.seguridadvialenlaempresa.com/media/blog/carreteras-convencionales-1194x585-1.jpg"
     },
     {
       "id": 2,
@@ -46,7 +46,7 @@
         }
       ],
       "resposta_correcta": 4,
-      "imatge": "./Imatges/Pregunta 2.jpg"
+      "imatge": "https://lh4.googleusercontent.com/proxy/gzpszRDn9BRlzgAOh1qDkhmbaBv_1Z3ixA0_kYcQg85EyxuwBXGX1p-wchIdBpLYkgI1kpep605cd8HmTj2AA927Co5dDreCuoP4FEtQKOmzrfgCNlVaUVnpMIqA2F4"
     },
     {
       "id": 3,
@@ -70,7 +70,7 @@
         }
       ],
       "resposta_correcta": 2,
-      "imatge": "./Imatges/Pregunta 3.jpg"
+      "imatge": "https://www.emesa-m30.es/wp-content/uploads/2020/04/tocar-claxon-848x530.jpg"
     },
     {
       "id": 4,
@@ -94,7 +94,7 @@
         }
       ],
       "resposta_correcta": 2,
-      "imatge": "./Imatges/Pregunta 4.jpg"
+      "imatge": "https://alcaladelrio.es/export/sites/alcaladelrio/.galleries/imagenes-noticias-test/108_Carrtera_x5x_1610020640949.jpg"
     },
     {
       "id": 5,
@@ -118,7 +118,7 @@
         }
       ],
       "resposta_correcta": 2,
-      "imatge": "./Imatges/Pregunta 5.jpg"
+      "imatge": "https://raccautoescola.cat/wp-content/uploads/2022/04/iStock-525210254-1-scaled.jpg"
     },
     {
       "id": 6,
@@ -142,7 +142,7 @@
         }
       ],
       "resposta_correcta": 1,
-      "imatge": "./Imatges/Pregunta 6.png"
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44QbH_JcWNLLLLaB1Voxe_J7dMiC13LC3yQ&s"
     },
     {
       "id": 7,
@@ -166,7 +166,7 @@
         }
       ],
       "resposta_correcta": 3,
-      "imatge": "./Imatges/Pregunta 7.jpg"
+      "imatge": "https://www.itv-tuvrheinland.es/storage/es/post/114/llevar-cinturon-de-seguridad-image-big.png"
     },
     {
       "id": 8,
@@ -190,7 +190,7 @@
         }
       ],
       "resposta_correcta": 2,
-      "imatge": "./Imatges/Pregunta 8.jpg"
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThsARev15g495b_Y_U2l3KYI_coLFYHrY4oQ&s"
     },
     {
       "id": 9,
@@ -214,7 +214,31 @@
         }
       ],
       "resposta_correcta": 1,
-      "imatge": "./Imatges/Pregunta 9.jpg"
+      "imatge": "https://www.race.es/wp-content/uploads/2017/08/uso-correcto-del-intermitente.jpg"
+    },
+    {
+      "id": 10,
+      "pregunta": "Què s’ha de fer si el vehicle patina a causa de la pluja?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Frenar bruscament per aturar el vehicle"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Accelerar per guanyar control"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Deixar d'accelerar i girar suaument en la direcció del patinatge"
+        },
+        {
+          "id": 4,
+          "etiqueta": "Mantenir el volant recte i accelerar lleugerament"
+        }
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxGHEtn5O8J8YSCy4ZhAdAWcpTICnLIw86g&s"
     }
   ]
 }
