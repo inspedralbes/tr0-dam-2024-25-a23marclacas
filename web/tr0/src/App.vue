@@ -167,7 +167,7 @@ async function missatgeP() {
 
               <div v-for="pregunta in llistaPreguntes" :key="pregunta.id" class="graella">
                   <div class="item"><h2>{{ pregunta.pregunta }}</h2></div>
-                  <div class="item"><p>img :src="pregunta.imatge"</p></div>
+                  <div class="item"><img :src="pregunta.imatge" width="400"></div>
                   <div class="item"><p>a&#41; {{ pregunta.respostes[0].etiqueta }}</p></div>
                   <div class="item"><p>b&#41; {{ pregunta.respostes[1].etiqueta }}</p></div>
                   <div class="item"><p>c&#41; {{ pregunta.respostes[2].etiqueta }}</p></div>
@@ -252,6 +252,7 @@ async function missatgeP() {
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      color: black;
   }
 
   .titol {
@@ -347,6 +348,7 @@ async function missatgeP() {
 }
 
 .modal-content {
+  color: black;
   background-color: white;
   padding: 20px;
   border-radius: 10px;

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const PORT = 25247;
+const PORT = 3000;
 const { spawn } = require('child_process');
 
 
@@ -122,5 +122,5 @@ app.post('/respostes', (req, res) => {
 
 // Iniciar el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor en funcionament a http://a23marclacas.dam.inspedralbes.cat:${PORT}`);
+  console.log(`Servidor en funcionament a http://localhost:${PORT}`);
 });
