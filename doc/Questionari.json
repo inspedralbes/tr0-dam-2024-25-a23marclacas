@@ -1,0 +1,244 @@
+{
+  "preguntes": [
+    {
+      "id": 1,
+      "pregunta": "Quina és la velocitat màxima per a una carretera secundària sense senyalització específica?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "50 km/h"
+        },
+        {
+          "id": 2,
+          "etiqueta": "60 km/h"
+        },
+        {
+          "id": 3,
+          "etiqueta": "80 km/h"
+        },
+        {
+          "id": 4,
+          "etiqueta": "100 km/h"
+        }
+      ],
+      "resposta_correcta": "3",
+      "imatge": "https://www.seguridadvialenlaempresa.com/media/blog/carreteras-convencionales-1194x585-1.jpg"
+    },
+    {
+      "id": 2,
+      "pregunta": "Què s’ha de fer quan el semàfor es posa en llum groga?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Continuar sense canviar de velocitat"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Aturar-se immediatament"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Accelerar per passar abans que es posi en vermell"
+        },
+        {
+          "id": 4,
+          "etiqueta": "Aturar-se si és segur fer-ho"
+        }
+      ],
+      "resposta_correcta": 4,
+      "imatge": "https://lh4.googleusercontent.com/proxy/gzpszRDn9BRlzgAOh1qDkhmbaBv_1Z3ixA0_kYcQg85EyxuwBXGX1p-wchIdBpLYkgI1kpep605cd8HmTj2AA927Co5dDreCuoP4FEtQKOmzrfgCNlVaUVnpMIqA2F4"
+    },
+    {
+      "id": 3,
+      "pregunta": "Quan es pot utilitzar el clàxon en una zona urbana?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Sempre que sigui necessari per avisar a altres conductors"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Només en situacions d'emergència"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Quan es vulgui expressar frustració amb altres conductors"
+        },
+        {
+          "id": 4,
+          "etiqueta": "A qualsevol hora del dia i de la nit"
+        }
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://www.emesa-m30.es/wp-content/uploads/2020/04/tocar-claxon-848x530.jpg"
+    },
+    {
+      "id": 4,
+      "pregunta": "Què significa una línia contínua al costat del camí?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Es pot avançar si no hi ha trànsit"
+        },
+        {
+          "id": 2,
+          "etiqueta": "No es pot avançar ni canviar de carril"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Es pot aparcar en zones específiques"
+        },
+        {
+          "id": 4,
+          "etiqueta": "És permès parar momentàniament per recollir o deixar passatgers"
+        }
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://alcaladelrio.es/export/sites/alcaladelrio/.galleries/imagenes-noticias-test/108_Carrtera_x5x_1610020640949.jpg"
+    },
+    {
+      "id": 5,
+      "pregunta": "Quan es pot girar a l’esquerra en una intersecció amb un senyal de cedir el pas?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Quan hi ha vehicles que vénen en sentit contrari"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Quan el senyal de trànsit permet el gir"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Sempre, independentment del senyal"
+        },
+        {
+          "id": 4,
+          "etiqueta": "Només si no hi ha senyalització de prohibició"
+        }
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://raccautoescola.cat/wp-content/uploads/2022/04/iStock-525210254-1-scaled.jpg"
+    },
+    {
+      "id": 6,
+      "pregunta": "Com s’ha de reaccionar davant d’una senyalització de parada obligatòria (STOP)?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Aturar-se completament i cedir el pas a altres vehicles i vianants"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Reduir la velocitat i continuar sense aturar-se"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Aturar-se només si hi ha altres vehicles"
+        },
+        {
+          "id": 4,
+          "etiqueta": "Continuar si no hi ha trànsit visible"
+        }
+      ],
+      "resposta_correcta": 1,
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44QbH_JcWNLLLLaB1Voxe_J7dMiC13LC3yQ&s"
+    },
+    {
+      "id": 7,
+      "pregunta": "Quin és l’ús correcte del cinturó de seguretat en un vehicle?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Només per al conductor"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Només per als passatgers del davant"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Per a tots els ocupants del vehicle"
+        },
+        {
+          "id": 4,
+          "etiqueta": "No és necessari utilitzar-lo en viatges curts"
+        }
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://www.itv-tuvrheinland.es/storage/es/post/114/llevar-cinturon-de-seguridad-image-big.png"
+    },
+    {
+      "id": 8,
+      "pregunta": "Què s’ha de fer si es vol estacionar en un lloc reservat per a persones amb discapacitat?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Aparcar si no hi ha altres opcions disponibles"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Aparcar només si es té una targeta de discapacitat"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Aparcar temporalment per baixar o recollir passatgers"
+        },
+        {
+          "id": 4,
+          "etiqueta": "No es pot aparcar sota cap circumstància"
+        }
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThsARev15g495b_Y_U2l3KYI_coLFYHrY4oQ&s"
+    },
+    {
+      "id": 9,
+      "pregunta": "Quan es pot utilitzar el senyal de canvi de carril?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Quan es vol canviar de carril, abans de fer-ho"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Només quan hi ha vehicles al voltant"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Després de canviar de carril"
+        },
+        {
+          "id": 4,
+          "etiqueta": "No és necessari utilitzar-lo si el canvi és curt"
+        }
+      ],
+      "resposta_correcta": 1,
+      "imatge": "https://www.race.es/wp-content/uploads/2017/08/uso-correcto-del-intermitente.jpg"
+    },
+    {
+      "id": 10,
+      "pregunta": "Què s’ha de fer si el vehicle patina a causa de la pluja?",
+      "respostes": [
+        {
+          "id": 1,
+          "etiqueta": "Frenar bruscament per aturar el vehicle"
+        },
+        {
+          "id": 2,
+          "etiqueta": "Accelerar per guanyar control"
+        },
+        {
+          "id": 3,
+          "etiqueta": "Deixar d'accelerar i girar suaument en la direcció del patinatge"
+        },
+        {
+          "id": 4,
+          "etiqueta": "Mantenir el volant recte i accelerar lleugerament"
+        }
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxGHEtn5O8J8YSCy4ZhAdAWcpTICnLIw86g&s"
+    }
+  ]
+}
